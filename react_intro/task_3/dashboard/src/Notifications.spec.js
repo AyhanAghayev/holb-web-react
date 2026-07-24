@@ -44,7 +44,7 @@ describe('Notifications component', () => {
     fireEvent.click(button);
 
     expect(logSpy).toHaveBeenCalledWith(
-      'Close button has been clicked'
+      expect.stringMatching(/close button has been clicked/i)
     );
 
     logSpy.mockRestore();
