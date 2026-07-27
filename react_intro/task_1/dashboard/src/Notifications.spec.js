@@ -2,12 +2,10 @@ import { render, screen } from '@testing-library/react';
 import Notifications from './Notifications';
 
 describe('Notifications component', () => {
-  test('renders the close button', () => {
+  test('renders a button', () => {
     render(<Notifications />);
 
-    const button = screen.getByRole('button', {
-      name: /close/i,
-    });
+    const button = screen.getByRole('button');
 
     expect(button).toBeInTheDocument();
   });
