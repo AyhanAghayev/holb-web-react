@@ -6,14 +6,14 @@ describe('Footer component tests', () => {
     render(<Footer />);
   });
 
-  test('renders the correct copyright text', () => {
-    render(<Footer />);
+  test('renders the correct copyright text when isIndex is true', () => {
+    render(<Footer isIndex />);
 
     const currentYear = new Date().getFullYear();
 
     expect(
       screen.getByText(
-        new RegExp(`Copyright ${currentYear} - Holberton School`, 'i')
+        new RegExp(`^Copyright ${currentYear} - Holberton School$`, 'i')
       )
     ).toBeInTheDocument();
   });
